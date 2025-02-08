@@ -4,6 +4,7 @@ import { IonActionSheet, IonButton } from '@ionic/react';
 interface ContainerProps { }
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
+  //Ionic Action Code
   return (
     <>
       <IonButton id="open-action-sheet">Open</IonButton>
