@@ -1,43 +1,50 @@
 import './ExploreContainer.css';
-//Import For Ionic Action
-import React from 'react';
+import React, { useState } from 'react';
 import { IonActionSheet, IonButton, IonSearchbar } from '@ionic/react';
+
 interface ContainerProps { }
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
+  const [showActionSheet, setShowActionSheet] = useState(false);
+
+  const openActionSheet = () => {
+    setShowActionSheet(true);
+  };
+
+  const handleAction = (action: string) => {
+    console.log(`Action selected: ${action}`);
+    setShowActionSheet(false); // Close the action sheet after selection
+  };
+
   return (
     <>
       {/* Ionic Search */}
-      <IonSearchbar></IonSearchbar>
+      <IonSearchbar placeholder="Search..."></IonSearchbar>
       {/* Ionic Action */}
-      <IonButton id="open-action-sheet">Open</IonButton>
+      <IonButton onClick={openActionSheet}>Open Action Sheet</IonButton>
       <IonActionSheet
-        trigger="open-action-sheet"
+        isOpen={showActionSheet}
         header="Actions"
         buttons={[
           {
             text: 'Delete',
             role: 'destructive',
-            data: {
-              action: 'delete',
-            },
+            handler: () => handleAction('delete'),
           },
           {
             text: 'Share',
-            data: {
-              action: 'share',
-            },
+            handler: () => handleAction('share'),
           },
           {
             text: 'Cancel',
             role: 'cancel',
-            data: {
-              action: 'cancel',
-            },
+            handler: () => handleAction('cancel'),
           },
         ]}
-      ></IonActionSheet>
+        onDidDismiss={() => setShowActionSheet(false)} // Close the action sheet when dismissed
+      />
     </>
   ); 
 };
+
 export default ExploreContainer;
