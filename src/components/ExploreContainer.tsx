@@ -1,13 +1,15 @@
 import './ExploreContainer.css';
 //Import For Ionic Action
 import React from 'react';
-import { IonActionSheet, IonButton } from '@ionic/react';
+import { IonActionSheet, IonButton, IonSearchbar } from '@ionic/react';
 interface ContainerProps { }
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
-  //Ionic Action Code
   return (
     <>
+      {/* Ionic Search */}
+      <IonSearchbar></IonSearchbar>
+      {/* Ionic Action */}
       <IonButton id="open-action-sheet">Open</IonButton>
       <IonActionSheet
         trigger="open-action-sheet"
@@ -36,6 +38,6 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
         ]}
       ></IonActionSheet>
     </>
-  );
+  ); 
 };
 export default ExploreContainer;
