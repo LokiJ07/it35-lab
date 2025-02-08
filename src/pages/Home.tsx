@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonModal, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 import { useRef } from 'react';
@@ -35,6 +35,13 @@ const Home: React.FC = () => {
           <IonContent>
             <ExploreContainer />
           </IonContent>
+     <IonCard>
+      <IonCardHeader>
+        <IonCardTitle>MySelf</IonCardTitle>
+        <IonCardSubtitle>Louie Jay Laspoña</IonCardSubtitle>
+      </IonCardHeader>
+        <IonCardContent>I Think I'm Funny!!</IonCardContent>
+    </IonCard>
         </IonModal>
       </IonContent>
     </IonPage>
