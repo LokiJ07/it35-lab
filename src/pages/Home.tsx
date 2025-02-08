@@ -4,14 +4,15 @@ import './Home.css';
 import { useRef } from 'react';
 
 const Home: React.FC = () => {
+  // ionic modal
   const modal = useRef<HTMLIonModalElement>(null);
 
   const dismiss = () => {
+
     if (modal.current) {
       modal.current.dismiss();
     }
   };
-
   return (
     <IonPage>
       <IonHeader>
@@ -30,6 +31,7 @@ const Home: React.FC = () => {
               </IonButtons>
             </IonToolbar>
           </IonHeader>
+          {/* ExploreContainer */}
           <IonContent>
             <ExploreContainer />
           </IonContent>
