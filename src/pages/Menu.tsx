@@ -55,6 +55,7 @@ import {
                     </IonContent>
                 </IonMenu>
                 
+                
                 <IonRouterOutlet id="main">
                     <Route exact path="/it35-lab/app/Home" component={Home} />
                     <Route exact path="/it35-lab/app/home/details" component={Details} />
