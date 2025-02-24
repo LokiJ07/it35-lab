@@ -18,7 +18,7 @@ import {
             <IonTitle>Search</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent fullscreen>
+        <IonContent fullscreen color="light">
         <div
           style={{
             display: 'flex',
