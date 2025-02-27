@@ -37,17 +37,13 @@ import {
               <IonLabel>Rick Astley</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
 
           <IonItemSliding>
@@ -58,17 +54,13 @@ import {
               <IonLabel>Leeroy Jenkins</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
 
           <IonItemSliding>
@@ -79,17 +71,13 @@ import {
               <IonLabel>Ionitron</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
 
           <IonItemSliding>
@@ -100,17 +88,13 @@ import {
               <IonLabel>Wall-E</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
 
           <IonItemSliding>
@@ -121,17 +105,13 @@ import {
               <IonLabel>Cortana</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
 
           <IonItemSliding>
@@ -142,17 +122,13 @@ import {
               <IonLabel>Bender</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
 
           <IonItemSliding>
@@ -163,17 +139,13 @@ import {
               <IonLabel>BB-8</IonLabel>
               <IonIcon aria-hidden="true" icon={call} slot="start"></IonIcon>
             </IonItem>
-            <IonItemOptions slot="end">
-              <IonItemOption color="warning">
-                <IonIcon slot="icon-only" icon={pin}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="tertiary">
-                <IonIcon slot="icon-only" icon={share}></IonIcon>
-              </IonItemOption>
-              <IonItemOption color="danger" expandable={true}>
-                <IonIcon slot="icon-only" icon={trash}></IonIcon>
-              </IonItemOption>
-            </IonItemOptions>
+            <IonItemOptions>
+          <IonItemOption>Favorite</IonItemOption>
+          <IonItemOption color="danger">Delete</IonItemOption>
+        </IonItemOptions>
+        <IonItemOptions side="start">
+          <IonItemOption color="success">Archive</IonItemOption>
+        </IonItemOptions>
           </IonItemSliding>
         </IonList>
 

@@ -35,7 +35,6 @@ import {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Connor Smith</h2>
-                  <p>Sales Rep</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -44,7 +43,6 @@ import {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Daniel Smith</h2>
-                  <p>Product Designer</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -53,7 +51,6 @@ import {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Greg Smith</h2>
-                  <p>Director of Operations</p>
                 </IonLabel>
               </IonItem>
               <IonItem>
@@ -62,7 +59,6 @@ import {
                 </IonAvatar>
                 <IonLabel>
                   <h2>Zoey Smith</h2>
-                  <p>CEO</p>
                 </IonLabel>
               </IonItem>
             </IonList>
