@@ -15,6 +15,8 @@ import {
       IonTitle, 
       IonToolbar 
   } from '@ionic/react';
+import SearchContainer from '../../components/SearchContainer';
+
   const Search: React.FC = () => {
     return (
       <IonPage>
@@ -27,8 +29,8 @@ import {
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen color="light">
-            <IonSearchbar placeholder="Search"></IonSearchbar>
-            <IonList>
+        <SearchContainer />
+            {/* <IonList>
               <IonItem>
                 <IonAvatar slot="start">
                   <IonImg src="https://ionicframework.com/docs/img/demos/avatar.svg" />
@@ -61,7 +63,7 @@ import {
                   <h2>Zoey Smith</h2>
                 </IonLabel>
               </IonItem>
-            </IonList>
+            </IonList> */}
           </IonContent>
       </IonPage>
     );
