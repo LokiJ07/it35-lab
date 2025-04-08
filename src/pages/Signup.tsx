@@ -31,7 +31,7 @@ const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void
   );
 };
 
-const Register: React.FC = () => {
+const Signup: React.FC = () => {
     const [username, setUsername] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -171,4 +171,4 @@ const Register: React.FC = () => {
     );
 };
 
-export default Register;
+export default Signup;
