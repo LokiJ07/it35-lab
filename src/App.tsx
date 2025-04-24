@@ -35,6 +35,7 @@ import './theme/variables.css';
 import Login from './pages/Login';
 import Menu from './pages/Menu';
 import Signup from './pages/Signup';
+import './tailwind.css';
 
 setupIonicReact();
 

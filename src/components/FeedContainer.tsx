@@ -27,7 +27,11 @@ const FeedContainer = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const { data: authData } = await supabase.auth.getUser();
-      if (authData?.user?.email?.endsWith('@nbsc.edu.ph')) {
+      // Check if the email ends with either @gmail.com or @nbsc.edu.ph
+      if (
+        authData?.user?.email?.includes('@gmail.com') ||
+        authData?.user?.email?.endsWith('@nbsc.edu.ph')
+      ) {
         setUser(authData.user);
         const { data: userData, error } = await supabase
           .from('users')

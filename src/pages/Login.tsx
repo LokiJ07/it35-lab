@@ -1,18 +1,7 @@
-import { 
-  IonAlert,
-  IonAvatar,
-  IonButton,
-  IonContent, 
-  IonIcon, 
-  IonInput, 
-  IonInputPasswordToggle,  
-  IonPage,  
-  IonToast,  
-  useIonRouter
-} from '@ionic/react';
-import { logoIonic } from 'ionicons/icons';
 import { useState } from 'react';
 import { supabase } from '../utils/supabaseClient';
+import { useIonRouter } from '@ionic/react';
+import { IonAlert, IonButton, IonContent, IonInput, IonPage, IonToast } from '@ionic/react';
 
 const AlertBox: React.FC<{ message: string; isOpen: boolean; onClose: () => void }> = ({ message, isOpen, onClose }) => {
   return (
@@ -43,70 +32,78 @@ const Login: React.FC = () => {
       return;
     }
 
-    setShowToast(true); 
+    setShowToast(true);
     setTimeout(() => {
       navigation.push('/it35-lab/app', 'forward', 'replace');
     }, 300);
   };
-  
+
   return (
     <IonPage>
-      <IonContent className='ion-padding'>
-        <div style={{
-          display: 'flex',
-          flexDirection:'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop:'25%'
-        }}>
-          <IonAvatar
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '150px',
-              height: '150px',
-              borderRadius: '50%', 
-              overflow: 'hidden' 
-            }}
-          >
-            <IonIcon 
-              icon={logoIonic}
-              color='primary'
-              style={{ fontSize: '120px', color: '#6c757d' }} 
-            />
-          </IonAvatar>
-          <h1 style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>USER LOGIN</h1>
-          <IonInput
-            label="Email" 
-            labelPlacement="floating" 
-            fill="outline"
-            type="email"
-            placeholder="Enter Email"
-            value={email}
-            onIonChange={e => setEmail(e.detail.value!)}
-          />
-          <IonInput style={{ marginTop:'10px' }}      
-            fill="outline"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onIonChange={e => setPassword(e.detail.value!)}
-          >
-            <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
-          </IonInput>
-        </div>
-        <IonButton onClick={doLogin} expand="full" shape='round'>
-          Login
-        </IonButton>
+      <IonContent className="p-4">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-green-900 via-green-700 to-green-600">
+          {/* Form wrapper with border */}
+          <div className="w-full max-w-md p-8 border-4 border-yellow-500 rounded-lg shadow-lg bg-black bg-opacity-60">
+            <div className="flex justify-center">
+              <div className="w-36 h-36 rounded-full overflow-hidden flex items-center justify-center bg-gradient-to-r from-green-400 to-yellow-500">
+                <img
+                  src="https://cdn-icons-gif.flaticon.com/18113/18113654.gif" // Loki-inspired animated logo
+                  alt="Logo"
+                  className="w-24 h-24"
+                />
+              </div>
+            </div>
 
-        <IonButton routerLink="/it35-lab/Signup" expand="full" fill="clear" shape='round'>
-          Don't have an account? Register here
-        </IonButton>
+            <h1 className="mt-6 text-3xl font-bold text-yellow-400 text-center">Loki's Login</h1>
+
+            {/* Email Input */}
+            <div className="mt-6 w-full">
+              <label htmlFor="email" className="block text-lg font-medium text-white">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="mt-2 w-full px-6 py-3 border border-yellow-500 rounded-lg text-black bg-white placeholder-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              />
+            </div>
+
+            {/* Password Input */}
+            <div className="mt-6 w-full">
+              <label htmlFor="password" className="block text-lg font-medium text-white">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="mt-2 w-full px-6 py-3 border border-yellow-500 rounded-lg text-black bg-white placeholder-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              />
+            </div>
+
+            {/* Login Button */}
+            <IonButton
+              onClick={doLogin}
+              expand="full"
+              shape="round"
+              className="mt-8 bg-yellow-500 text-black rounded-lg py-3 hover:bg-yellow-600 hover:scale-105 transform transition-all duration-300"
+            >
+              Login
+            </IonButton>
+
+            {/* Register Link Button */}
+            <IonButton
+              routerLink="/it35-lab/Signup"
+              expand="full"
+              fill="clear"
+              shape="round"
+              className="mt-4 text-yellow-400 hover:text-yellow-500"
+            >
+              Don't have an account? Register here
+            </IonButton>
+          </div>
+        </div>
 
         {/* Reusable AlertBox Component */}
         <AlertBox message={alertMessage} isOpen={showAlert} onClose={() => setShowAlert(false)} />
