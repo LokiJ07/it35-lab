@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonInput, IonLabel, IonModal, IonFooter, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonAlert, IonText, IonAvatar, IonCol, IonGrid, IonRow, IonIcon, IonPopover } from '@ionic/react';
+import { IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonButton, IonModal, IonFooter, IonAlert, IonText, IonAvatar, IonCol, IonRow, IonPopover, IonLabel, IonCardSubtitle, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/react';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../utils/supabaseClient';
-import { colorFill, pencil, trash } from 'ionicons/icons';
+import { pencil } from 'ionicons/icons';
 
 interface Post {
   post_id: string;
@@ -11,76 +11,64 @@ interface Post {
   avatar_url: string;
   post_content: string;
   post_created_at: string;
-  post_updated_at: string;
 }
 
 const FeedContainer = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [postContent, setPostContent] = useState('');
   const [editingPost, setEditingPost] = useState<Post | null>(null);
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser ] = useState<User | null>(null);
   const [username, setUsername] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAlertOpen, setIsAlertOpen] = useState(false);
   const [popoverState, setPopoverState] = useState<{ open: boolean; event: Event | null; postId: string | null }>({ open: false, event: null, postId: null });
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const { data: authData } = await supabase.auth.getUser();
-      // Check if the email ends with either @gmail.com or @nbsc.edu.ph
-      if (
-        authData?.user?.email?.includes('@gmail.com') ||
-        authData?.user?.email?.endsWith('@nbsc.edu.ph')
-      ) {
-        setUser(authData.user);
+    const fetchUser  = async () => {
+      const { data: authData } = await supabase.auth.getUser ();
+      if (authData?.user) {
+        setUser (authData.user);
         const { data: userData, error } = await supabase
           .from('users')
           .select('user_id, username, user_avatar_url')
           .eq('user_email', authData.user.email)
           .single();
         if (!error && userData) {
-          setUser({ ...authData.user, id: userData.user_id });
+          setUser ({ ...authData.user, id: userData.user_id });
           setUsername(userData.username);
         }
       }
     };
+
     const fetchPosts = async () => {
       const { data, error } = await supabase.from('posts').select('*').order('post_created_at', { ascending: false });
       if (!error) setPosts(data as Post[]);
     };
-    fetchUser();
+
+    fetchUser ();
     fetchPosts();
   }, []);
 
   const createPost = async () => {
     if (!postContent || !user || !username) return;
-  
-    // Fetch avatar URL
+
     const { data: userData, error: userError } = await supabase
       .from('users')
       .select('user_avatar_url')
       .eq('user_id', user.id)
       .single();
-  
-    if (userError) {
-      console.error('Error fetching user avatar:', userError);
-      return;
-    }
-  
+
     const avatarUrl = userData?.user_avatar_url || 'https://ionicframework.com/docs/img/demos/avatar.svg';
-  
-    // Insert post with avatar URL
+
     const { data, error } = await supabase
       .from('posts')
-      .insert([
-        { post_content: postContent, user_id: user.id, username, avatar_url: avatarUrl }
-      ])
+      .insert([{ post_content: postContent, user_id: user.id, username, avatar_url: avatarUrl }])
       .select('*');
-  
+
     if (!error && data) {
       setPosts([data[0] as Post, ...posts]);
     }
-  
+
     setPostContent('');
   };
 
@@ -114,27 +102,30 @@ const FeedContainer = () => {
 
   return (
     <>
-      <IonContent>
+      <IonContent className="bg-gray-900 text-gray-200">
         {user ? (
           <>
-            <IonCard>
+            <IonCard className="bg-gray-800 p-4 rounded-lg shadow-lg">
               <IonCardHeader>
-                <IonCardTitle>Create Post</IonCardTitle>
-              </IonCardHeader>
+                <IonCardTitle className="text-yellow-400">Create Post</IonCardTitle>
+                </IonCardHeader>
               <IonCardContent>
                 <IonInput
                   value={postContent}
                   onIonChange={e => setPostContent(e.detail.value!)}
                   placeholder="Write a post..."
+                  className="bg-gray-700 text-gray-200 placeholder-gray-400"
                 />
               </IonCardContent>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.5rem' }}>
-                <IonButton onClick={createPost}>Post</IonButton>
+              <div className="flex justify-end mt-4">
+                <IonButton className="bg-green-600 text-white hover:bg-green-500" onClick={createPost}>
+                  Post
+                </IonButton>
               </div>
             </IonCard>
-  
+
             {posts.map(post => (
-              <IonCard key={post.post_id} style={{ marginTop: '2rem' }}>
+              <IonCard key={post.post_id} className="mt-4 bg-gray-800 text-gray-200 rounded-lg shadow-lg">
                 <IonCardHeader>
                   <IonRow>
                     <IonCol size="1.85">
@@ -143,8 +134,8 @@ const FeedContainer = () => {
                       </IonAvatar>
                     </IonCol>
                     <IonCol>
-                      <IonCardTitle style={{ marginTop: '10px' }}>{post.username}</IonCardTitle>
-                      <IonCardSubtitle>{new Date(post.post_created_at).toLocaleString()}</IonCardSubtitle>
+                      <IonCardTitle className="text-yellow-400">{post.username}</IonCardTitle>
+                      <IonCardSubtitle className="text-gray-400">{new Date(post.post_created_at).toLocaleString()}</IonCardSubtitle>
                     </IonCol>
                     <IonCol size="auto">
                       <IonButton
@@ -162,13 +153,13 @@ const FeedContainer = () => {
                     </IonCol>
                   </IonRow>
                 </IonCardHeader>
-  
+
                 <IonCardContent>
-                  <IonText style={{ color: 'black' }}>
+                  <IonText className="text-white">
                     <h1>{post.post_content}</h1>
                   </IonText>
                 </IonCardContent>
-  
+
                 <IonPopover
                   isOpen={popoverState.open && popoverState.postId === post.post_id}
                   event={popoverState.event}
@@ -200,14 +191,14 @@ const FeedContainer = () => {
             ))}
           </>
         ) : (
-          <IonLabel>Loading...</IonLabel>
+          <IonLabel className="text-yellow-400">Loading...</IonLabel>
         )}
       </IonContent>
-  
+
       <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Edit Post</IonTitle>
+            <IonTitle className="text-yellow-400">Edit Post</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -215,14 +206,17 @@ const FeedContainer = () => {
             value={postContent}
             onIonChange={e => setPostContent(e.detail.value!)}
             placeholder="Edit your post..."
+            className="bg-gray-700 text-gray-200 placeholder-gray-400"
           />
         </IonContent>
         <IonFooter>
-          <IonButton onClick={savePost}>Save</IonButton>
+          <IonButton className="bg-green-600 text-white hover:bg-green-500" onClick={savePost}>
+            Save
+          </IonButton>
           <IonButton onClick={() => setIsModalOpen(false)}>Cancel</IonButton>
         </IonFooter>
       </IonModal>
-  
+
       <IonAlert
         isOpen={isAlertOpen}
         onDidDismiss={() => setIsAlertOpen(false)}
@@ -232,8 +226,6 @@ const FeedContainer = () => {
       />
     </>
   );
-  
-
 };
 
 export default FeedContainer;

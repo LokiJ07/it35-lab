@@ -1,26 +1,26 @@
 import { 
   IonButtons,
-    IonContent, 
-    IonHeader, 
-    IonMenuButton, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar 
+  IonContent, 
+  IonHeader, 
+  IonMenuButton, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar 
 } from '@ionic/react';
 import FeedContainer from '../../components/FeedContainer';
 
 const Feed: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
+    <IonPage className="bg-gray-900">
+      <IonHeader className="bg-gray-800">
         <IonToolbar>
           <IonButtons slot='start'>
-            <IonMenuButton></IonMenuButton>
+            <IonMenuButton className="text-yellow-400"></IonMenuButton>
           </IonButtons>
-          <IonTitle>Feed</IonTitle>
+          <IonTitle className="text-yellow-400">Feed</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen className="bg-gray-900 text-gray-200">
         <FeedContainer />
       </IonContent>
     </IonPage>

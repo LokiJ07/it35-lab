@@ -105,7 +105,7 @@ const Signup: React.FC = () => {
               placeholder="Enter a unique username"
               value={username}
               onIonChange={(e) => setUsername(e.detail.value!)}
-              className="mt-6 w-full px-6 py-3 text-black bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="mt-6 w-full px-6 py-3 text-black bg-grey placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
             <IonInput
               
@@ -115,7 +115,7 @@ const Signup: React.FC = () => {
               placeholder="Enter your first name"
               value={firstName}
               onIonChange={(e) => setFirstName(e.detail.value!)}
-              className="mt-6 w-full px-6 py-3 text-black bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="mt-6 w-full px-6 py-3 text-black bg-grey placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
             <IonInput
             
@@ -125,7 +125,7 @@ const Signup: React.FC = () => {
               placeholder="Enter your last name"
               value={lastName}
               onIonChange={(e) => setLastName(e.detail.value!)}
-              className="mt-6 w-full px-6 py-3 text-black bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="mt-6 w-full px-6 py-3 text-black bg-grey placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
             <IonInput
             
@@ -135,7 +135,7 @@ const Signup: React.FC = () => {
               placeholder="Input any Email"
               value={email}
               onIonChange={(e) => setEmail(e.detail.value!)}
-              className="mt-6 w-full px-6 py-3 text-black bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="mt-6 w-full px-6 py-3 text-black bg-grey placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
             <IonInput
             
@@ -145,7 +145,7 @@ const Signup: React.FC = () => {
               placeholder="Enter password"
               value={password}
               onIonChange={(e) => setPassword(e.detail.value!)}
-              className="mt-6 w-full px-6 py-3 text-black bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="mt-6 w-full px-6 py-3 text-black bg-grey placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             >
               <IonInputPasswordToggle slot="end" />
             </IonInput>
@@ -157,7 +157,7 @@ const Signup: React.FC = () => {
               placeholder="Confirm password"
               value={confirmPassword}
               onIonChange={(e) => setConfirmPassword(e.detail.value!)}
-              className="mt-6 w-full px-6 py-3 text-black bg-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className="mt-6 w-full px-6 py-3 text-black bg-grey placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             >
               <IonInputPasswordToggle slot="end" />
             </IonInput>
