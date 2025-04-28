@@ -45,12 +45,12 @@ const Login: React.FC = () => {
           {/* Form wrapper with border */}
           <div className="w-full max-w-md p-8 border-4 border-yellow-500 rounded-lg shadow-lg bg-black bg-opacity-60">
             <div className="flex justify-center">
-              <div className="w-36 h-36 rounded-full overflow-hidden flex items-center justify-center bg-gradient-to-r from-green-400 to-yellow-500">
+              <div className="w-40 h-40 rounded-full overflow-hidden flex items-center justify-center bg-gradient-to-r from-green-400 to-yellow-500">
                 <img
-                  src="https://cdn-icons-gif.flaticon.com/18113/18113654.gif" // Loki-inspired animated logo
+                  src="https://i.pinimg.com/originals/fe/7a/92/fe7a922b5b296ac092f25e709772b3d7.gif" 
                   alt="Logo"
-                  className="w-24 h-24"
-                />
+                  className="w-35 h-35 rounded-full "
+                />  
               </div>
             </div>
 
